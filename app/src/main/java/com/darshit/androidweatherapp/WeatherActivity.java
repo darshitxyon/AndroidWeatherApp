@@ -1,4 +1,4 @@
-﻿package com.darshit.androidweatherapp;
+package com.darshit.androidweatherapp;
 
 import android.Manifest;
 import android.app.Service;
@@ -127,7 +127,7 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 2, this);
                 if (locationManager != null) {
                     location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                    apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&APPID="+Helper.API_KEY+"&units=metric";
+                    apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&APPID="+"710e516abeb1de24d0bf174ffd7ce498"+"&units=metric";
                     makeJsonObject(apiUrl);
                 }
             }else{
@@ -216,10 +216,10 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 2, this);
                     if (locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                        apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&APPID="+Helper.API_KEY+"&units=metric";
+                        apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&APPID="+"710e516abeb1de24d0bf174ffd7ce498"+"&units=metric";
                         makeJsonObject(apiUrl);
                     }else{
-                        apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=51.5074&lon=0.1278&APPID="+Helper.API_KEY+"&units=metric";
+                        apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=51.5074&lon=0.1278&APPID="+"710e516abeb1de24d0bf174ffd7ce498"+"&units=metric";
                         makeJsonObject(apiUrl);
                     }
                 }
@@ -242,7 +242,7 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
     @Override
     public void onProviderEnabled(String s) {
 
-    }
+    }   
 
     @Override
     public void onProviderDisabled(String provider) {
@@ -335,10 +335,10 @@ public class WeatherActivity extends AppCompatActivity implements LocationListen
 //                            daysOfTheWeek.add(new WeatherObject(shortDay, R.drawable.small_weather_icon, temp, tempMin));
 //                            everyday[6] = 1;
 //                        }
-//                        recyclerViewAdapter = new RecyclerViewAdapter(WeatherActivity.this, daysOfTheWeek);
-//                        recyclerView.setAdapter(recyclerViewAdapter);
-//                    }
-                  //}
+                        recyclerViewAdapter = new RecyclerViewAdapter(WeatherActivity.this, daysOfTheWeek);
+                        recyclerView.setAdapter(recyclerViewAdapter);
+
+
                 }
             }
         }, new Response.ErrorListener() {
